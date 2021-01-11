@@ -4,21 +4,28 @@
   "description": "JavaScript Wrapper for YouTube API on list methods",
   "main": "build/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "babel ./src -d ./lib"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mlomboglia/yt-list.git"
   },
-  "keywords": ["npm",
+  "keywords": [
+    "npm",
     "node",
     "yt",
     "youtube",
-    "javascript"],
+    "javascript"
+  ],
   "author": "Marcos Lombog",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/mlomboglia/yt-list/issues"
   },
-  "homepage": "https://github.com/mlomboglia/yt-list#readme"
+  "homepage": "https://github.com/mlomboglia/yt-list#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0"
+  }
 }

@@ -4,7 +4,6 @@
   "description": "JavaScript Wrapper for YouTube API on list methods",
   "main": "build/index.js",
   "scripts": {
-    "prepublishOnly": "npm run build",
     "test": "nyc mocha --require babel-core/register",
     "build": "npm run lint && babel ./src -d ./lib",
     "lint": "eslint ./src"

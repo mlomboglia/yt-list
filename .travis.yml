@@ -1,0 +1,16 @@
+language: node_js
+node_js:
+- node
+deploy:
+  # add this line after travis setup
+  skip_cleanup: true
+  provider: npm
+  email: hello@marcoslombog.com
+  api_key:
+    secure: RRqvqVzz9GNTMDFReYSZg51XPw5XiOtatoI4VLTkLxGsPh8a7kWjsM50rE9x8vioeaEd+1YlKgAc+O7l3aUqmNzqK9LEpkcoxa8T7Rbdj7MrkVxERfJ9lWWGTZJL52wq5tJ/1isBiGZkrvbrQr9kcqDFEJFulalIXBiHFETvK0iDqdJJcw2p1IFxYegjrWqLuy2T2Y3HIZAS1Dg0MYODcibSLPBvJON62BPzlOZSeLYURmvdEmIIFkAmwiuA5ENpVrbHbn/YmfUwncRAMt7nnYmn3/i+sN1TjHsXl4TqHd5aJvwdnUG+bB6V+3/KTRtffU633VQqqhpoJceK+IBSP1g8ujeUjGPBHbfgzR88r2VgeQyf9AYHuFHtjn0YG+J9W3Mao+F1K/KUDYTexrikZxt7E4yuBlfT389pYnzjiqTCahvwpZ3W0WOX3n1UCInUhBA4u75QxO1vKT+9qntdW3pCkpAqUJqToKMW/HaUqBikFk/RW0J062kZf3C0Tn6zj1uZhrA2yL3HkoVC7x9PhyaQIpldBL3/waQjDqM9A5iVYRi8ShaSZLDn67TmyAccto5NQ8xe9YF9Pg1x/+u9er51Z/fcv9JAjUBepY2mHBbPJe0cL9aoBRaJccvytFVKX/wQsUdOo8rY3kULWFs+sYNEOVGji3gjsL/KYJW8bnU=
+  on:
+    tags: true
+    repo: mlomboglia/yt-list
+  skip_cleanup: 'true'
+
+

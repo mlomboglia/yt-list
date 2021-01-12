@@ -1,6 +1,6 @@
 {
   "name": "yt-list",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "JavaScript Wrapper for YouTube API on list methods",
   "main": "build/index.js",
   "scripts": {

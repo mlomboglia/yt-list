@@ -3,12 +3,17 @@ node_js:
 - node
 deploy:
   provider: npm
-  email: hello@marcoslombog.com
+  email: '$NPM_EMAIL'
   api_key:
-    secure: "$NPM_TOKEN"
+    secure: '$NPM_TOKEN'
   on:
     tags: true
     repo: mlomboglia/yt-list
   skip_cleanup: 'true'
+branches:
+  only:
+    - master
+    - /^v[0-9]+.*$/
+
 
 

@@ -2,8 +2,6 @@ language: node_js
 node_js:
 - node
 deploy:
-  # add this line after travis setup
-  skip_cleanup: true
   provider: npm
   email: hello@marcoslombog.com
   api_key:

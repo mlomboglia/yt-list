@@ -1,6 +1,8 @@
 language: node_js
 node_js:
 - node
+before_deploy:
+- npm run build
 deploy:
   provider: npm
   email: '$NPM_EMAIL'
@@ -9,11 +11,7 @@ deploy:
   on:
     tags: true
     repo: mlomboglia/yt-list
+    branch: master
   skip_cleanup: 'true'
-branches:
-  only:
-    - master
-    - /^v[0-9]+.*$/
-
 
 

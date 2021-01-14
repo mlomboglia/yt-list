@@ -23,9 +23,10 @@ exports.searchVideos = async (searchQuery, nextPageToken, amount) => {
     });
 };
 
-exports.searchRelatedVideos = async (videoId, amountRelatedVideos) => {
+exports.searchRelatedVideos = async (videoId, nextPageToken, amountRelatedVideos) => {
   const config = ytRequests.buildRelatedVideosRequest(
     videoId, 
+    nextPageToken,
     amountRelatedVideos
   );
   return axios
@@ -37,7 +38,7 @@ exports.searchRelatedVideos = async (videoId, amountRelatedVideos) => {
       return results;
     })
     .catch((err) => {
-      console.log(err);
+      console.log(err); 
       return err;
     });
 };

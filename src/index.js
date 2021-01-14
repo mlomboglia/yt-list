@@ -1,8 +1,9 @@
 const axios = require("./youtube-axios");
-const youtubeAPI = require("./youtube-api");
+const ytRequests = require("./requests/search");
+const ytReducers = require("./reducers/search");
 
-exports.searchForVideos = async (searchQuery, nextPageToken, amount) => {
-  const config = youtubeAPI.buildSearchRequest(
+exports.searchVideos = async (searchQuery, nextPageToken, amount) => {
+  const config = ytRequests.buildSearchRequest(
     searchQuery,
     nextPageToken,
     amount
@@ -10,9 +11,28 @@ exports.searchForVideos = async (searchQuery, nextPageToken, amount) => {
   return axios
     .request(config)
     .then((response) => {
-      const results = youtubeAPI.reduceSearchForVideos(
+      const results = ytReducers.reduceSearchVideosRequest(
         response.data,
         searchQuery
+      );
+      return results;
+    })
+    .catch((err) => {
+      console.log(err);
+      return err;
+    });
+};
+
+exports.searchRelatedVideos = async (videoId, amountRelatedVideos) => {
+  const config = ytRequests.buildRelatedVideosRequest(
+    videoId, 
+    amountRelatedVideos
+  );
+  return axios
+    .request(config)
+    .then((response) => {
+      const results = ytReducers.reduceRelatedVideosRequest(
+        response.data
       );
       return results;
     })

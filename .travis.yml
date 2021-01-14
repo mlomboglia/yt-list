@@ -11,7 +11,4 @@ deploy:
   on:
     tags: true
     repo: mlomboglia/yt-list
-    branch: master
   skip_cleanup: 'true'
-
-

@@ -8,6 +8,6 @@ describe('Search', () => {
     });
     it("Search Related Videos", async () => {
         const search = await ytlist.searchRelatedVideos("WyF8RHM1OCg", null, 10);
-        assert.equal(search.items[0], "3E6WRnqftj8");
+        assert.equal(search.items[0], "3E6WRnqftj8"); 
     });
   }); 

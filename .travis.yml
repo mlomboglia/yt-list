@@ -6,7 +6,7 @@ before_deploy:
 deploy:
   provider: npm
   email: '$NPM_EMAIL'
-  api_key:
+  api_key: 
     secure: '$NPM_TOKEN'
   on:
     tags: true

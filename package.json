@@ -2,7 +2,7 @@
   "name": "yt-list",
   "version": "0.0.8",
   "description": "JavaScript Wrapper for YouTube API on list methods",
-  "main": "build/index.js",
+  "main": "lib/index.js",
   "scripts": {
     "test": "nyc mocha --require babel-core/register",
     "build": "npm run lint && babel ./src -d ./lib",

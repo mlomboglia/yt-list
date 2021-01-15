@@ -1,6 +1,7 @@
 # yt-list [![travis][travis-image]][travis-url] [![npm][npm-image]][npm-url] [![downloads][downloads-image]][downloads-url]
 
-[![Build Status](https://travis-ci.com/mlomboglia/yt-list.svg?branch=master)](https://travis-ci.com/mlomboglia/yt-list)
+[travis-image]: https://travis-ci.com/mlomboglia/yt-list.svg?branch=master
+[travis-url]: https://travis-ci.com/mlomboglia/yt-list
 [npm-image]: https://img.shields.io/npm/v/yt-list.svg
 [npm-url]: https://npmjs.org/package/yt-list
 [downloads-image]: https://img.shields.io/npm/dm/yt-list.svg

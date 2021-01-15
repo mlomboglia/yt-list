@@ -4,14 +4,14 @@ const response_types = require('../youtube-response-types');
  * Search Reducer
  */
 exports.reduceSearchVideosRequest = (response, searchQuery) => {
-  let searchResults = response.items.map((item) => ({
+  let searchItems = response.items.map((item) => ({
     ...item,
     videoId: item.id.videoId,
   }));
   return {
     totalResults: response.pageInfo.totalResults,
     query: searchQuery,
-    results: searchResults,
+    items: searchItems,
     nextPageToken: response.nextPageToken,
   };
 }; 

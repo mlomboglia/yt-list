@@ -10,6 +10,7 @@
 # JavaScript Wrapper for YouTube API on list methods
 
 Simplify your life using this api to search, list videos, channels, comments on YouTube.
+Results are on Youtube format 
 
 # Install
 
@@ -44,8 +45,34 @@ const searchResults = await ytlist.searchVideos(searchQuery, nextPageToken, amou
 {
    totalResults: Integer,
    query: String,
-   results: Array[Object], // YouTube API result format
+   items: Array[Object], // YouTube API response format below
    nextPageToken: String,
+}
+
+// YouTube API response format
+{
+  "kind": "youtube#searchResult",
+  "etag": etag,
+  "id": {
+    "kind": string,
+    "videoId": string,
+    "channelId": string,
+    "playlistId": string
+  },
+  "snippet": {
+    "publishedAt": datetime,
+    "channelId": string,
+    "title": string,
+    "description": string,
+    "thumbnails": {
+      (key): {
+        "url": string,
+        "width": unsigned integer,
+        "height": unsigned integer
+      }
+    },
+    "videoId": string
+  }
 }
 ```
 

@@ -17,6 +17,8 @@ jobs:
         with:
           node-version: 12
       - run: npm ci
+      - env:
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
       - run: npm test
 
   publish-npm:

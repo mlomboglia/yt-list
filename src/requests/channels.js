@@ -1,10 +1,11 @@
 require('dotenv').config();
+const util = require('./util');
 
 /**
  * Channels
  */
 exports.buildChannelRequest = (channelId) => {
-  return buildApiRequest(
+  return util.buildApiRequest(
     "GET",
     "/youtube/v3/channels",
     {

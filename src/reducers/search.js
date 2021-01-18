@@ -16,11 +16,12 @@ exports.reduceSearchVideosRequest = (response, searchQuery) => {
   };
 }; 
 
-exports.reduceRelatedVideosRequest = (response) => {
+exports.reduceRelatedVideosRequest = (response, videoId) => {
   const relatedVideoIds = response.items.map((video) => video.id.videoId);
   return {
     totalResults: response.pageInfo.totalResults,
     nextPageToken: response.nextPageToken,
-    items: relatedVideoIds
+    items: relatedVideoIds,
+    videoId: videoId
   };
 };

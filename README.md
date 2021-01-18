@@ -21,7 +21,9 @@ API expects a YOUTUBE_API_KEY variable with the API key
 
 Create .env file in the root of your project with your YouTube API Key 
 
+```bash
 YOUTUBE_API_KEY=your youtube api key
+```
 
 ```js
 const ytlist = require('yt-list')
@@ -89,6 +91,25 @@ const searchRelatedResults = await ytlist.searchRelatedVideos(videoId, nextPageT
    totalResults: Integer,
    items: Array[String], // Related Video Ids
    nextPageToken: String,
+}
+```
+
+### listChannel(channelId)
+
+List channel details by ChannelId
+
+```javascript
+const channel = await ytlist.listChannel(channelId);
+
+// Response object
+{
+  channelId: String,
+  snippet: {
+    title: String,
+    description: String,
+    thumbnails: { medium: [Object] }
+  },
+  statistics: { subscriberCount: String }
 }
 ```
 

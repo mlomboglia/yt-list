@@ -7,7 +7,7 @@
 
 # JavaScript Wrapper for YouTube API on list methods
 
-Simplify your life using this api to search, list videos, channels, comments on YouTube.
+Simplify your life using this api to search, list videos, channels, comments on YouTube.<br/>
 Results are on Youtube format 
 
 # Install
@@ -17,8 +17,7 @@ npm install yt-list@latest
 ```
 
 # Usage
-API expects a YOUTUBE_API_KEY variable with the API key
-
+API expects a YOUTUBE_API_KEY variable with the API key<br/>
 Create .env file in the root of your project with your YouTube API Key 
 
 ```bash

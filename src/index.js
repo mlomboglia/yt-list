@@ -6,6 +6,9 @@ const ytSearchReducers = require("./reducers/search");
 const ytChannelRequests = require("./requests/channels");
 const ytChannelReducers = require("./reducers/channels");
 
+const ytCommentsRequests = require("./requests/comments");
+const ytCommentsReducers = require("./reducers/comments");
+
 exports.searchVideos = async (searchQuery, nextPageToken, amount) => {
   const config = ytSearchRequests.buildSearchRequest(
     searchQuery,
@@ -56,6 +59,24 @@ exports.listChannel = async (channelId) => {
     .then((response) => {
       const result = ytChannelReducers.reduceChannelRequest(
         response.data.items, channelId
+      );
+      return result;
+    })
+    .catch((err) => {
+      console.log(err); 
+      return err;
+    });
+};
+
+exports.listComments = async (videoId, nextPageToken) => {
+  const config = ytCommentsRequests.buildCommentThreadRequest(
+    videoId, nextPageToken
+  );
+  return axios
+    .request(config)
+    .then((response) => {
+      const result = ytCommentsReducers.reduceCommentsRequest(
+        response.data, videoId
       );
       return result;
     })

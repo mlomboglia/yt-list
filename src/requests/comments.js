@@ -1,10 +1,11 @@
 require('dotenv').config();
+const util = require('./util');
 
 /**
  * Comment Threads
  */
 exports.buildCommentThreadRequest = (videoId, nextPageToken) => {
-  return buildApiRequest(
+  return util.buildApiRequest(
     "GET",
     "/youtube/v3/commentThreads",
     {

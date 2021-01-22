@@ -15,7 +15,13 @@ describe("Search", () => {
 describe("Channel", () => {
   it("List Channel", async () => {
     const channel = await ytlist.listChannel("UC_x5XG1OV2P6uZZ5FSM9Ttw");
-    console.log(channel);
     assert.equal(channel.snippet.title, "Google Developers");
+  });
+});
+
+describe("Comments", () => {
+  it("List Comments", async () => {
+    const comments = await ytlist.listComments("WyF8RHM1OCg", null);
+    assert.equal(comments.pageInfo.totalResults, 20);
   });
 });

@@ -13,8 +13,8 @@ describe("Search", () => {
 });
 
 describe("Channel", () => {
-  it("List Channel", async () => {
-    const channel = await ytlist.listChannel("UC_x5XG1OV2P6uZZ5FSM9Ttw");
+  it("List Channel Details", async () => {
+    const channel = await ytlist.listChannelDetails("UC_x5XG1OV2P6uZZ5FSM9Ttw");
     assert.equal(channel.snippet.title, "Google Developers");
   });
 });
@@ -23,5 +23,12 @@ describe("Comments", () => {
   it("List CommentThreads", async () => {
     const comments = await ytlist.listCommentThreads("WyF8RHM1OCg", null);
     assert.equal(comments.pageInfo.totalResults, 20);
+  });
+});
+
+describe("Videos", () => {
+  it("List Video Details", async () => {
+    const video = await ytlist.listVideoDetails("WyF8RHM1OCg", null);
+    assert.equal(video.snippet.title, "Whitesnake - Here I Go Again '87 (Official Music Video)");
   });
 });

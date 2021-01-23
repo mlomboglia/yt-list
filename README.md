@@ -7,8 +7,8 @@
 
 # JavaScript Wrapper for YouTube API on list methods
 
-Simplify your life using this api to search, list videos, channels, comments on YouTube.<br/>
-Results are on Youtube format 
+Simplify your life using this api to search videos, related videos, channel details, comments threads on YouTube.<br/>
+Results are on Youtube API response format 
 
 # Install
 
@@ -94,13 +94,13 @@ const searchRelatedResults = await ytlist.searchRelatedVideos(videoId, nextPageT
 }
 ```
 
-## Channel
-### listChannel(channelId)
+## Channels
+### listChannelDetails(channelId)
 
 List channel details by ChannelId
 
 ```javascript
-const channel = await ytlist.listChannel(channelId);
+const channel = await ytlist.listChannelDetails(channelId);
 
 // Response object
 {
@@ -117,7 +117,7 @@ const channel = await ytlist.listChannel(channelId);
 ## Comments
 ### listCommentThreads (videoId, nextPageToken)
 
-List of comment threads of a videoId
+List comment threads of a videoId
 
 NextPageToken to retrieve the next page of results
 
@@ -174,6 +174,66 @@ const comments = await ytlist.listCommentThreads(videoId, nextPageToken);
     "moderationStatus": string,
     "publishedAt": datetime,
     "updatedAt": datetime
+  }
+}
+```
+
+## Videos
+### listVideoDetails(videoId)
+
+List video details by VideoId
+
+```javascript
+const video = await ytlist.listVideoDetails(viodeId);
+
+// Response object
+{
+  "videoId": String,
+  "snippet": {
+    "publishedAt": datetime,
+    "channelId": string,
+    "title": string,
+    "description": string,
+    "thumbnails": {
+      (key): {
+        "url": string,
+        "width": unsigned integer,
+        "height": unsigned integer
+      }
+    },
+    "channelTitle": string,
+    "tags": [
+      string
+    ],
+    "categoryId": string,
+    "liveBroadcastContent": string,
+    "defaultLanguage": string,
+    "localized": {
+      "title": string,
+      "description": string
+    },
+    "defaultAudioLanguage": string
+  },
+  "contentDetails": {
+    "duration": string,
+    "dimension": string,
+    "definition": string,
+    "caption": string,
+    "licensedContent": boolean,
+    "regionRestriction": {
+      "allowed": [
+        string
+      ],
+      "blocked": [
+        string
+      ]
+  },
+  "statistics": {
+    "viewCount": unsigned long,
+    "likeCount": unsigned long,
+    "dislikeCount": unsigned long,
+    "favoriteCount": unsigned long,
+    "commentCount": unsigned long
   }
 }
 ```

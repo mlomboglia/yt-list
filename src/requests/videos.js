@@ -1,10 +1,11 @@
 require('dotenv').config();
+const util = require('./util');
 
 /**
  * Video Categories
  */
 exports.buildVideoCategoriesRequest = () => {
-  return buildApiRequest(
+  return util.buildApiRequest(
     "GET",
     "/youtube/v3/videoCategories",
     {
@@ -18,6 +19,7 @@ exports.buildVideoCategoriesRequest = () => {
 
 /**
  * Most Popular Videos
+ * https://www.googleapis.com/youtube/v3/videos
  */
 exports.buildMostPopularVideosRequest = (
   amount = 12,
@@ -30,7 +32,7 @@ exports.buildMostPopularVideosRequest = (
   if (loadDescription) {
     fields += ",items/snippet/description";
   }
-  return buildApiRequest(
+  return util.buildApiRequest(
     "GET",
     "/youtube/v3/videos",
     {
@@ -50,8 +52,8 @@ exports.buildMostPopularVideosRequest = (
 /**
  * Videos
  */
-exports.buildVideoDetailRequest = (videoId) => {
-  return buildApiRequest(
+exports.buildVideoDetailsRequest = (videoId) => {
+  return util.buildApiRequest(
     "GET",
     "/youtube/v3/videos",
     {

@@ -30,6 +30,7 @@ const ytlist = require('yt-list')
 ```
 
 # API
+## Search
 ### searchVideos(searchQuery, nextPageToken, amount)
 
 Search videos based on a search query. 
@@ -77,7 +78,7 @@ const searchResults = await ytlist.searchVideos(searchQuery, nextPageToken, amou
 
 ### searchRelatedVideos(videoId, nextPageToken, amount)
 
-Search Related Videos based on a videoId. 
+Search Related Videos based on a videoId
 
 NextPageToken to retrieve the next page of results
 Amount of results per page
@@ -93,6 +94,7 @@ const searchRelatedResults = await ytlist.searchRelatedVideos(videoId, nextPageT
 }
 ```
 
+## Channel
 ### listChannel(channelId)
 
 List channel details by ChannelId
@@ -109,6 +111,70 @@ const channel = await ytlist.listChannel(channelId);
     thumbnails: { medium: [Object] }
   },
   statistics: { subscriberCount: String }
+}
+```
+
+## Comments
+### listCommentThreads (videoId, nextPageToken)
+
+List of comment threads of a videoId
+
+NextPageToken to retrieve the next page of results
+
+```javascript
+const comments = await ytlist.listCommentThreads(videoId, nextPageToken);
+
+// Response object
+{
+   pageInfo: { totalResults: Integer, resultsPerPage: Integer },
+   items: Array[Object], // YouTube API response format below
+   videoId: String,
+   nextPageToken: String,
+}
+
+// YouTube API response format
+{
+  "kind": "youtube#commentThread",
+  "etag": etag,
+  "id": string,
+  "snippet": {
+    "channelId": string,
+    "videoId": string,
+    "topLevelComment": comments Resource,
+    "canReply": boolean,
+    "totalReplyCount": unsigned integer,
+    "isPublic": boolean
+  },
+  "replies": {
+    "comments": [
+      comments Resource
+    ]
+  }
+}
+
+{
+  "kind": "youtube#comment",
+  "etag": etag,
+  "id": string,
+  "snippet": {
+    "authorDisplayName": string,
+    "authorProfileImageUrl": string,
+    "authorChannelUrl": string,
+    "authorChannelId": {
+      "value": string
+    },
+    "channelId": string,
+    "videoId": string,
+    "textDisplay": string,
+    "textOriginal": string,
+    "parentId": string,
+    "canRate": boolean,
+    "viewerRating": string,
+    "likeCount": unsigned integer,
+    "moderationStatus": string,
+    "publishedAt": datetime,
+    "updatedAt": datetime
+  }
 }
 ```
 

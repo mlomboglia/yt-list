@@ -3,7 +3,7 @@ const response_types = require('../youtube-response-types');
 /**
  * Comments Reducer
  */
-exports.reduceCommentsRequest = (response, videoId) => {
+exports.reduceCommentThreadsRequest = (response, videoId) => {
   return {
     pageInfo: response.pageInfo,
     items: response.items,
@@ -11,4 +11,5 @@ exports.reduceCommentsRequest = (response, videoId) => {
     nextPageToken: response.nextPageToken,
   };
 }; 
+
 

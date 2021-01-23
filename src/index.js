@@ -68,14 +68,14 @@ exports.listChannel = async (channelId) => {
     });
 };
 
-exports.listComments = async (videoId, nextPageToken) => {
+exports.listCommentThreads = async (videoId, nextPageToken) => {
   const config = ytCommentsRequests.buildCommentThreadRequest(
     videoId, nextPageToken
   );
   return axios
     .request(config)
     .then((response) => {
-      const result = ytCommentsReducers.reduceCommentsRequest(
+      const result = ytCommentsReducers.reduceCommentThreadsRequest(
         response.data, videoId
       );
       return result;

@@ -3,6 +3,7 @@ const util = require('./util');
 
 /**
  * Channels
+ * https://www.googleapis.com/youtube/v3/channels
  */
 exports.buildChannelRequest = (channelId) => {
   return util.buildApiRequest(

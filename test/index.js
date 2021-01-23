@@ -20,8 +20,8 @@ describe("Channel", () => {
 });
 
 describe("Comments", () => {
-  it("List Comments", async () => {
-    const comments = await ytlist.listComments("WyF8RHM1OCg", null);
+  it("List CommentThreads", async () => {
+    const comments = await ytlist.listCommentThreads("WyF8RHM1OCg", null);
     assert.equal(comments.pageInfo.totalResults, 20);
   });
 });

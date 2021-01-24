@@ -1,5 +1,6 @@
-# yt-list [![npm][npm-image]][npm-url] [![downloads][downloads-image]][downloads-url]
+# yt-list [![build-master][build-url] [![npm][npm-image]][npm-url] [![downloads][downloads-image]][downloads-url]
 
+[build-url]: https://github.com/mlomboglia/yt-list/workflows/build-master/badge.svg
 [npm-image]: https://img.shields.io/npm/v/yt-list.svg
 [npm-url]: https://npmjs.org/package/yt-list
 [downloads-image]: https://img.shields.io/npm/dm/yt-list.svg
